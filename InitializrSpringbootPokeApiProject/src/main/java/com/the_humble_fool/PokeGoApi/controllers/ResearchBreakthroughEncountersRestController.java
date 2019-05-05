@@ -29,13 +29,13 @@ public class ResearchBreakthroughEncountersRestController
     ResearchBreakthroughEncountersPublicService service;
 
     @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public List<ResearchBreakthroughEncountersServiceModel> AllEggPoolsHandler()
+    public List<ResearchBreakthroughEncountersServiceModel> AllEncoutersHandler()
     {
         return service.getAllResearchBreakthroughEncounters();
     }
 
     @RequestMapping(path = "filter", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public List<ResearchBreakthroughEncountersServiceModel> AllTypesSortedHandler(@RequestParam("pokemon") String pokemon)
+    public List<ResearchBreakthroughEncountersServiceModel> AllFilteredEncountersHandler(@RequestParam("pokemon") String pokemon)
     {
         List<ResearchBreakthroughEncountersServiceModel> namedResearchBreakthroughEncounters = service.getNamedResearchBreakthroughEncounters(pokemon);
         
